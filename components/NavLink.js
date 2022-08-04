@@ -1,14 +1,12 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 
-const NavLink = ({ href = "/", children }) => {
+export default function NavLink({ href = '/', title }) {
   return (
     <li>
-      <Link href={href} className="uppercase">
-        {children}
+      <Link href={href}>
+        <span className="capitalize cursor-pointer">{title}</span>
       </Link>
     </li>
   );
-};
-
-export default NavLink;
+}
