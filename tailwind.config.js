@@ -18,6 +18,7 @@ module.exports = {
         'fancy-purple': 'hsla(298,50%,23%,1)',
         'fancy-purple-light': 'hsla(298,50%,23%,.6)',
         'solid-brown': 'rgba(101, 100, 100, 1)',
+        'fancy-blue': 'hsla(214, 91%, 54%, 1)',
       },
     },
   },
