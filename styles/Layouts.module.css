@@ -1,0 +1,16 @@
+.layout_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout_span {
+  flex: 1;
+  height: max-content;
+  min-height: 80vh;
+}
+
+.layout_main {
+  height: 100%;
+}
