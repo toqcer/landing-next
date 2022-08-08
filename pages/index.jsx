@@ -9,10 +9,16 @@ export default function Home() {
       <section
         className={`${styles.home_hero} flex flex-col justify-center relative h-screen overflow-hidden`}
       >
-        <div className="container mx-auto">
-          <h3 className="font-bold text-5xl">
+        <div className="container mx-auto ">
+          <h3 className="font-bold text-5xl leading-tight">
             Toqcer, One Stop <br /> Solution for You
           </h3>
+          <p className="text-solid-brown my-4">
+            Improve your digital integration and quality.
+          </p>
+          <button className="bg-fancy-purple font-semibold text-white text-sm py-6 px-12 rounded-2xl">
+            About More
+          </button>
         </div>
         <div className="w-3/5 aspect-[1/1] opacity-70 absolute -right-20 -bottom-48 ">
           <Image
