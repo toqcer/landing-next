@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FIX_HEIGHT_NAVBAR } from '../config';
 import NavLink from './NavLink';
 import { routes } from '../config';
@@ -7,12 +7,30 @@ import { useRouter } from 'next/router';
 
 export default function Navbar() {
   const router = useRouter();
+  const [windowYPos, setWindowYPos] = useState(() => {
+    if (typeof window === 'undefined') return;
+    return window.screenY;
+  });
+
+  function handleWindowScroll() {
+    setWindowYPos(window.scrollY);
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleWindowScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleWindowScroll);
+    };
+  }, [windowYPos]);
+
   return (
     <nav
       style={{
+        backgroundColor: `rgba(255,255,255,${windowYPos}%)`,
         height: FIX_HEIGHT_NAVBAR,
       }}
-      className="flex bg-transparent fixed z-10 top-0 w-full items-center px-20 border-b-fancy-blue/20 border-b-[1px]"
+      className={`bg-white flex fixed z-10 top-0 w-full items-center px-20 border-b-fancy-blue/20 border-b-[1px]`}
     >
       <div className="relative w-48 h-full ">
         <Image

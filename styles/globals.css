@@ -1,9 +1,16 @@
+@import url('https://rsms.me/inter/inter.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*@font-face {*/
+/*  font-family: Inter;*/
+/*}*/
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: 'Inter';
 }

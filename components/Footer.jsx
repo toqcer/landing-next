@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-cyan-200 h-20">
       <div></div>
       <div className="flex items-center">
-        <div className="">Hello World</div>
+        <div className="">Footer</div>
       </div>
     </footer>
   );

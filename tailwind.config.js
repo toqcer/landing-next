@@ -3,6 +3,8 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './sections/**/*.{js,ts,jsx,tsx}',
+    './layouts/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     container: {
@@ -35,6 +37,7 @@ module.exports = {
         'fancy-purple-light': 'hsla(298,50%,23%,.6)',
         'solid-brown': 'rgba(101, 100, 100, 1)',
         'fancy-blue': 'hsla(214, 91%, 54%, 1)',
+        'solid-purple': 'hsla(297, 14%,50%,1)',
       },
     },
   },
