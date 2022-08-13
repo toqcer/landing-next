@@ -1,7 +1,8 @@
 import Card from '../../components/Card/Card';
 import { BsArrowRightShort, BsStar } from 'react-icons/bs';
+import FancyButton from '../../components/Button/FancyButton';
 
-export default function SectionOurAchievement() {
+export default function SectionPorto() {
   return (
     <section className={'container mx-auto py-20'}>
       <div className={'flex lg:flex-row flex-col gap-6 '}>
@@ -41,10 +42,10 @@ export default function SectionOurAchievement() {
             We have realized many ideas from our clients professionally. We help
             clients expand their reach, and thrive with new technologies.
           </p>
-          <button className="shadow-lg shadow-fancy-purple/80 py-4 px-9 bg-fancy-purple text-white flex rounded-xl items-center text-lg">
+          <FancyButton>
             Discover me
             <BsArrowRightShort className="ml-4" size={32} />
-          </button>
+          </FancyButton>
         </div>
       </div>
     </section>

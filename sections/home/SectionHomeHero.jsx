@@ -1,5 +1,6 @@
 import styles from '../../styles/HomeSection.module.css';
 import Image from 'next/image';
+import FancyButton from '../../components/Button/FancyButton';
 
 export default function SectionHomeHero() {
   return (
@@ -13,9 +14,9 @@ export default function SectionHomeHero() {
         <p className="text-solid-brown my-4">
           Improve your digital integration and quality.
         </p>
-        <button className="bg-fancy-purple font-semibold text-white text-sm py-6 px-12 rounded-2xl">
+        <FancyButton className="font-medium text-sm py-6 px-12 rounded-2xl">
           About More
-        </button>
+        </FancyButton>
       </div>
       <div className="w-3/5 lg:aspect-square cursor-pointer absolute z-[2] opacity-80 -right-20 -bottom-48 ">
         <Image
