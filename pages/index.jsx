@@ -4,6 +4,7 @@ import SectionHomeHero from '../sections/home/SectionHomeHero';
 import SectionAboutUsHome from '../sections/home/SectionAboutUsHome';
 import SectionSkills from '../sections/home/SectionSkills';
 import SectionPorto from '../sections/home/SectionPorto';
+import SectionTeams from '../sections/home/SectionTeams';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <SectionAboutUsHome />
       <SectionPorto />
       <SectionSkills />
+      <SectionTeams />
     </>
   );
 }
