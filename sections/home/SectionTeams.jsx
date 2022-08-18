@@ -2,8 +2,27 @@ import { BsCheck } from 'react-icons/bs';
 import Image from 'next/image';
 
 import Card from '../../components/Card/Card';
+import { useEffect, useState } from 'react';
+import BGCustom from '../../styles/Bg.module.css';
 
 export default function SectionTeams() {
+    const [members, setMembers] = useState([]);
+
+    useEffect(() => {
+        async function getApiMembers() {
+            const resMembers = await fetch(
+                'https://jsonplaceholder.typicode.com/posts?_limit=5',
+            );
+            const jsonMembers = await resMembers.json();
+
+            setMembers(jsonMembers);
+        }
+
+        getApiMembers();
+    }, []);
+
+    console.log('member', members);
+
     return (
         <section className="py-20">
             <div className="container mx-auto">
@@ -17,26 +36,33 @@ export default function SectionTeams() {
                         team that has many abilities
                     </p>
                 </div>
-                <div className="grid grid-cols-12 lg:mt-16 gap-6 ">
-                    {[...Array(6)].map((_, idx) => (
+                <div className="grid grid-cols-4 gap-4 lg:mt-16">
+                    {members.map((member, index) => (
                         <div
-                            key={idx}
-                            className="border border-[#F3F3F3] rounded-lg lg:col-span-3 items-center justify-center py-6 px-11"
+                            key={index}
+                            className="hover:shadow-bottom-x hover:bg-white transition-all cursor-pointer rounded-lg w-full 
+                                items-center py-6 px-11 flex flex-col"
                         >
                             {/* Avatar */}
-                            <Card className=" p-4 shadow-md shadow-gray-500 w-full aspect-square rounded-full relative">
-                                <div className="w-full h-full overflow-hidden rounded-full relative bg-[#E2EEFF]">
+                            <div
+                                className={`w-36 h-36 bg-cover p-3 relative ${BGCustom['bg-linear-orange']}`}
+                            >
+                                <div
+                                    className={`overflow-hidden relative w-full h-full bg-blue-50 rounded-full`}
+                                >
                                     <Image
                                         src="/images/avatar-placeholder.png"
-                                        objectFit="cover"
-                                        layout="fill"
                                         alt=""
+                                        layout="fill"
                                     />
                                 </div>
-                                <div className="absolute left-1/2 -translate-x-1/2 bottom-0 b-5 w-5 h-5 rounded-full text-white text-lg flex justify-center items-center bg-blue-600">
+                                <div
+                                    className="absolute left-1/2 -translate-x-1/2 bottom-0 b-5 w-5 h-5 rounded-full 
+                                            text-white text-lg flex justify-center items-center bg-blue-600"
+                                >
                                     <BsCheck />
                                 </div>
-                            </Card>
+                            </div>
                             <div className="flex flex-col text-center mt-4 ">
                                 <span className="font-semibold">
                                     Bariq Dharmawan

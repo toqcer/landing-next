@@ -23,8 +23,6 @@ export default function SectionSkills() {
         getApiSkill();
     }, [page]);
 
-    console.log(skills);
-
     return (
         <section className="py-20 bg-linear-green-center">
             <div className="container mx-auto">

@@ -24,6 +24,9 @@ module.exports = {
             },
         },
         extend: {
+            boxShadow: {
+                'bottom-x': '0px 34px 68px 0px #7473801A',
+            },
             colors: {
                 'my-emerald': 'hsla(166,50%,44%,1)',
                 'my-emerald-light': 'hsla(166,50%,44%,.6)',
@@ -40,6 +43,9 @@ module.exports = {
                 'solid-purple': 'hsla(297, 14%,50%,1)',
                 'purple-bold': '#2F2C4A',
                 'gray-helper': '#656464',
+                'gray-blue-200': '#E2EEFF',
+                'white-50': '#F3F3F3',
+                'blue-50': '#E2EEFF',
             },
             backgroundImage: {
                 'linear-blue':
