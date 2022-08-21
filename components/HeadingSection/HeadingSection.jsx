@@ -1,4 +1,8 @@
-export default function HeadingSection({ text, subtext = null }) {
+export default function HeadingSection({
+    text,
+    subtext = null,
+    className = '',
+}) {
     return (
         <>
             {subtext && (
@@ -6,7 +10,9 @@ export default function HeadingSection({ text, subtext = null }) {
                     {subtext}
                 </span>
             )}
-            <h2 className="text-4xl font-bold">{text}</h2>
+            <h2 className={`text-4xl font-bold ${className && className}`}>
+                {text}
+            </h2>
         </>
     );
 }

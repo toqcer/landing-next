@@ -20,6 +20,7 @@ export default function SectionReview() {
                         <HeadingSection
                             text="Client Review"
                             subtext="What Our Client Feels About"
+                            className="mb-12"
                         />
 
                         <p className="text-gray-helper">
