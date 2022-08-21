@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Card from '../../components/Card/Card';
 import { useEffect, useState } from 'react';
 import BGCustom from '../../styles/Bg.module.css';
+import HeadingSection from '../../components/HeadingSection/HeadingSection';
 
 export default function SectionTeams() {
     const [members, setMembers] = useState([]);
@@ -27,10 +28,10 @@ export default function SectionTeams() {
         <section className="py-20">
             <div className="container mx-auto">
                 <div className="text-center mx-auto lg:w-[421px]">
-                    <span className="capitalize text-fancy-purple font-semibold">
-                        Introducing
-                    </span>
-                    <h2 className="text-4xl font-bold">Our Team Members</h2>
+                    <HeadingSection
+                        text="Our Team Members"
+                        subtext="Introducing"
+                    />
                     <p className="text-solid-brown leading-8 mt-4">
                         Behind a startup with a variety of services, there is a
                         team that has many abilities

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 import { BiLoaderAlt } from 'react-icons/bi';
+import HeadingSection from '../../components/HeadingSection/HeadingSection';
 
 export default function SectionSkills() {
     const [skills, setSkills] = useState([]);
@@ -27,10 +28,10 @@ export default function SectionSkills() {
         <section className="py-20 bg-linear-green-center">
             <div className="container mx-auto">
                 <div className="text-center mx-auto lg:w-[421px]">
-                    <span className="capitalize text-fancy-purple font-semibold">
-                        what we have
-                    </span>
-                    <h2 className="text-4xl font-bold">Tools and Skills</h2>
+                    <HeadingSection
+                        subtext="what we have"
+                        text="Tools and Skills"
+                    />
                     <p className="text-solid-brown leading-8 mt-4">
                         The wise man once said that we must recognize the
                         weapons we use
