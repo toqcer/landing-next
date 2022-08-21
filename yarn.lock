@@ -737,6 +737,13 @@
   dependencies:
     "esutils" "^2.0.2"
 
+"dom7@^4.0.4":
+  "integrity" "sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw=="
+  "resolved" "https://registry.npmjs.org/dom7/-/dom7-4.0.4.tgz"
+  "version" "4.0.4"
+  dependencies:
+    "ssr-window" "^4.0.0"
+
 "eastasianwidth@^0.2.0":
   "integrity" "sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA=="
   "resolved" "https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz"
@@ -2284,6 +2291,11 @@
   "resolved" "https://registry.npmjs.org/source-map-js/-/source-map-js-1.0.2.tgz"
   "version" "1.0.2"
 
+"ssr-window@^4.0.0", "ssr-window@^4.0.2":
+  "integrity" "sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ=="
+  "resolved" "https://registry.npmjs.org/ssr-window/-/ssr-window-4.0.2.tgz"
+  "version" "4.0.2"
+
 "string-argv@^0.3.1":
   "integrity" "sha512-a1uQGz7IyVy9YwhqjZIZu1c8JO8dNIe20xBmSS6qu9kv++k3JGzCVmprbNN5Kn+BgzD5E7YYwg1CcjuJMRNsvg=="
   "resolved" "https://registry.npmjs.org/string-argv/-/string-argv-0.3.1.tgz"
@@ -2401,6 +2413,14 @@
   "resolved" "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   "version" "1.0.0"
 
+"swiper@^8.3.2":
+  "integrity" "sha512-8wsC7ORYvVSnLUoxs2+xmfLrDPNjBVQXMCFbOlqtHeON6wtu/blOyySDr8TCBCdse1bdcIbn7m8xJNxVFL8o4Q=="
+  "resolved" "https://registry.npmjs.org/swiper/-/swiper-8.3.2.tgz"
+  "version" "8.3.2"
+  dependencies:
+    "dom7" "^4.0.4"
+    "ssr-window" "^4.0.2"
+
 "tailwindcss@^3.1.4":
   "integrity" "sha512-NrxbFV4tYsga/hpWbRyUfIaBrNMXDxx5BsHgBS4v5tlyjf+sDsgBg5m9OxjrXIqAS/uR9kicxLKP+bEHI7BSeQ=="
   "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.1.4.tgz"
@@ -2494,6 +2514,11 @@
   "integrity" "sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w=="
   "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-0.21.3.tgz"
   "version" "0.21.3"
+
+"typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3.3.1":
+  "integrity" "sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ=="
+  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.7.4.tgz"
+  "version" "4.7.4"
 
 "unbox-primitive@^1.0.2":
   "integrity" "sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw=="

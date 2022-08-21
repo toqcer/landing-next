@@ -5,19 +5,21 @@ import SectionAboutUsHome from '../sections/home/SectionAboutUsHome';
 import SectionSkills from '../sections/home/SectionSkills';
 import SectionPorto from '../sections/home/SectionPorto';
 import SectionTeams from '../sections/home/SectionTeams';
+import SectionReview from '../sections/home/SectionReview';
 
 export default function Home() {
-  return (
-    <>
-      <SectionHomeHero />
-      <SectionAboutUsHome />
-      <SectionPorto />
-      <SectionSkills />
-      <SectionTeams />
-    </>
-  );
+    return (
+        <>
+            <SectionHomeHero />
+            <SectionAboutUsHome />
+            <SectionPorto />
+            <SectionSkills />
+            <SectionTeams />
+            <SectionReview />
+        </>
+    );
 }
 
 Home.getLayout = function getLayout(page) {
-  return <MainLayout>{page}</MainLayout>;
+    return <MainLayout>{page}</MainLayout>;
 };

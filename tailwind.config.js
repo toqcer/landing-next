@@ -28,6 +28,7 @@ module.exports = {
                 'bottom-x': '0px 34px 68px 0px #7473801A',
             },
             colors: {
+                'midnight-blue': '#20202D',
                 'my-emerald': 'hsla(166,50%,44%,1)',
                 'my-emerald-light': 'hsla(166,50%,44%,.6)',
                 'blue-coral': 'hsla(183,68%,36%,1)',
@@ -36,7 +37,7 @@ module.exports = {
                 'my-blue-light': 'hsla(203,64%,29%,.6)',
                 'my-purple': 'hsla(241,44%,26%,1)',
                 'my-purple-light': 'hsla(241,44%,26%,.6)',
-                'fancy-purple': 'hsla(298,50%,23%,1)',
+                'fancy-purple': '#571C56',
                 'fancy-purple-light': 'hsla(298,50%,23%,.6)',
                 'solid-brown': 'rgba(101, 100, 100, 1)',
                 'fancy-blue': 'hsla(214, 91%, 54%, 1)',
