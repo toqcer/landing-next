@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Scrollbar } from 'swiper';
+import { Scrollbar, Pagination, Autoplay } from 'swiper';
 import 'swiper/css';
+import 'swiper/css/scrollbar';
 import 'swiper/css/pagination';
 import { BiRightArrowAlt, BiStar } from 'react-icons/bi';
 import Link from 'next/link';
@@ -30,50 +31,48 @@ export default function SectionReview({ className }) {
                             brilliant.
                         </p>
                     </div>
-                    <div className="col-span-8">
+                    <div className="col-span-8 ">
                         <div className="overflow-hidden">
                             <Swiper
-                                modules={[Scrollbar]}
+                                modules={[Pagination, Autoplay]}
                                 slidesPerView={2.5}
                                 spaceBetween={60}
+                                autoplay={{ delay: 9000 }}
                                 watchOverflow={true}
-                                scrollbar={{ draggable: true }}
+                                pagination={{ clickable: true }}
                                 style={{
                                     paddingLeft: '3rem',
                                     paddingRight: '3rem',
                                 }}
                                 mousewheel={true}
                             >
-                                {[...Array(5).fill(5)].map(
-                                    (reviewItem, index) => (
-                                        <SwiperSlide
-                                            className="overflow-visible py-10"
-                                            key={index}
-                                        >
-                                            <Card className="shadow-lg">
-                                                <div className="flex items-center gap-3 mb-10">
-                                                    <BiStar color="#571C56" />
-                                                    <p className="text-xl">
-                                                        Build KOMINFO WEB
-                                                    </p>
-                                                </div>
-                                                <p className="text-gray-600">
-                                                    More than 2 billion we
-                                                    people over countries use
-                                                    socibooks we to stay in
-                                                    touch with friends.
+                                {[...Array(5)].map((reviewItem, index) => (
+                                    <SwiperSlide
+                                        className="overflow-visible py-10 bg-white"
+                                        key={index}
+                                    >
+                                        <Card className="!shadow-lg">
+                                            <div className="flex items-center gap-3 mb-10">
+                                                <BiStar color="#571C56" />
+                                                <p className="text-xl">
+                                                    Build KOMINFO WEB
                                                 </p>
+                                            </div>
+                                            <p className="text-gray-600">
+                                                More than 2 billion we people
+                                                over countries use socibooks we
+                                                to stay in touch with friends.
+                                            </p>
 
-                                                <Link href="/details">
-                                                    <a className="text-fancy-purple inline-flex items-center">
-                                                        See details
-                                                        <BiRightArrowAlt />
-                                                    </a>
-                                                </Link>
-                                            </Card>
-                                        </SwiperSlide>
-                                    ),
-                                )}
+                                            <Link href="/details" passHref>
+                                                <a className="text-fancy-purple inline-flex items-center">
+                                                    See details
+                                                    <BiRightArrowAlt />
+                                                </a>
+                                            </Link>
+                                        </Card>
+                                    </SwiperSlide>
+                                ))}
                             </Swiper>
                         </div>
                     </div>
