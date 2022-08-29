@@ -8,9 +8,26 @@ import Link from 'next/link';
 import Card from '../../components/Card/Card';
 
 import ContainerStyle from '../../styles/Container.module.css';
+
 import HeadingSection from '../../components/HeadingSection/HeadingSection';
+import { useEffect, useRef, useState } from 'react';
 
 export default function SectionReview({ className }) {
+    const [reviews, setReviews] = useState([]);
+
+    async function getReviews() {
+        const dummyReviewsRes = await fetch(
+            `https://jsonplaceholder.typicode.com/posts?_limit=6`,
+        );
+        setReviews([...reviews, ...(await dummyReviewsRes.json())]);
+    }
+
+    const apiRef = useRef(getReviews);
+
+    useEffect(() => {
+        apiRef.current();
+    }, []);
+
     return (
         <section className={`overflow-hidden ${className && className}`}>
             <div
@@ -46,26 +63,24 @@ export default function SectionReview({ className }) {
                                 }}
                                 mousewheel={true}
                             >
-                                {[...Array(5)].map((reviewItem, index) => (
+                                {reviews.map((review, index) => (
                                     <SwiperSlide
-                                        className="overflow-visible py-10 bg-white"
+                                        className="overflow-visible py-10 bg-white !h-auto"
                                         key={index}
                                     >
-                                        <Card className="!shadow-lg">
+                                        <Card className="!shadow-lg h-full flex flex-col">
                                             <div className="flex items-center gap-3 mb-10">
                                                 <BiStar color="#571C56" />
                                                 <p className="text-xl">
-                                                    Build KOMINFO WEB
+                                                    {review.title}
                                                 </p>
                                             </div>
-                                            <p className="text-gray-600">
-                                                More than 2 billion we people
-                                                over countries use socibooks we
-                                                to stay in touch with friends.
+                                            <p className="text-gray-600 mb-3">
+                                                {review.body}
                                             </p>
 
                                             <Link href="/details" passHref>
-                                                <a className="text-fancy-purple inline-flex items-center">
+                                                <a className="text-fancy-purple inline-flex items-center mt-auto">
                                                     See details
                                                     <BiRightArrowAlt />
                                                 </a>
