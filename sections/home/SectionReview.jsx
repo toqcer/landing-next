@@ -9,9 +9,9 @@ import Card from '../../components/Card/Card';
 import ContainerStyle from '../../styles/Container.module.css';
 import HeadingSection from '../../components/HeadingSection/HeadingSection';
 
-export default function SectionReview() {
+export default function SectionReview({ className }) {
     return (
-        <section className="overflow-hidden">
+        <section className={`overflow-hidden ${className && className}`}>
             <div
                 className={`container pr-0 ml-auto overflow-visible ${ContainerStyle['container-right-0']}`}
             >
@@ -21,6 +21,7 @@ export default function SectionReview() {
                             text="Client Review"
                             subtext="What Our Client Feels About"
                             className="mb-12"
+                            isCenter={false}
                         />
 
                         <p className="text-gray-helper">

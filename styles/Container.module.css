@@ -1,6 +1,6 @@
 @screen lg {
     .container-right-0 {
-        transform: translateX(129px);
+        transform: translateX(65px);
         max-width: calc(1260px + 129px);
     }
 }

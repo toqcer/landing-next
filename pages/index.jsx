@@ -6,6 +6,7 @@ import SectionSkills from '../sections/home/SectionSkills';
 import SectionPorto from '../sections/home/SectionPorto';
 import SectionTeams from '../sections/home/SectionTeams';
 import SectionReview from '../sections/home/SectionReview';
+import SectionService from '../sections/home/SectionServices';
 
 export default function Home() {
     return (
@@ -15,7 +16,8 @@ export default function Home() {
             <SectionPorto />
             <SectionSkills />
             <SectionTeams />
-            <SectionReview />
+            <SectionReview className="mb-10" />
+            <SectionService />
         </>
     );
 }
