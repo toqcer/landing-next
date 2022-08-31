@@ -8,7 +8,7 @@ export default function SectionServices() {
     const [services, setServices] = useState([]);
 
     return (
-        <section>
+        <section className="py-10">
             <div className="container mx-auto">
                 <HeadingSection
                     text="Products and Services"

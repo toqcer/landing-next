@@ -8,7 +8,7 @@ import { BiLoaderAlt } from 'react-icons/bi';
 import HeadingSection from '../../components/HeadingSection/HeadingSection';
 import UsersIcon from '../../public/images/UsersIcon';
 
-export default function SectionSkills() {
+export default function SectionServices() {
     const [skills, setSkills] = useState([]);
     const [page, setPage] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
@@ -30,21 +30,30 @@ export default function SectionSkills() {
     }, [page]);
 
     return (
-        <section className="py-20 bg-linear-green-center">
+        <section className="py-20 bg-linear-green-center mt-10">
             <div className="container mx-auto">
                 <div className="text-center mx-auto lg:w-[421px]">
                     <HeadingSection
-                        subtext="what we have"
-                        text="Tools and Skills"
+                        text="Services"
+                        className="text-black !text-3xl"
                     />
-                    <p className="text-solid-brown leading-8 mt-4">
-                        The wise man once said that we must recognize the
-                        weapons we use
-                    </p>
+                    <div className="w-full mt-8 border-[0.5px] border-my-emerald flex rounded-lg overflow-hidden">
+                        <input
+                            className="px-6 border-none flex-1 outline-none"
+                            type="text"
+                            placeholder="What you looking for..."
+                        />
+                        <button className="h-12 px-10 rounded  bg-my-emerald text-white font-semibold">
+                            Search
+                        </button>
+                    </div>
                 </div>
-                <div className="grid grid-cols-12 gap-8 lg:mt-16">
+                <div className="grid grid-cols-12 gap-8 mt-16">
                     {skills.map((skill, i) => (
-                        <Card key={i} className="col-span-6 bg-white">
+                        <Card
+                            key={i}
+                            className="col-span-12 lg:col-span-6 bg-white"
+                        >
                             <figure className="flex items-center gap-4">
                                 <div
                                     className="flex items-center justify-center shadow-md h-20 w-20 

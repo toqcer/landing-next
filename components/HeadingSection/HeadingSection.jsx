@@ -15,11 +15,7 @@ export default function HeadingSection({
                     {subtext}
                 </span>
             )}
-            <h2
-                className={`text-4xl font-bold ${
-                    className && className
-                } text-fancy-purple`}
-            >
+            <h2 className={`text-4xl font-bold text-fancy-purple ${className}`}>
                 {text}
             </h2>
         </>

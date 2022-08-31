@@ -16,10 +16,10 @@ export default function Home() {
             <SectionHomeHero />
             <SectionAboutUsHome />
             <SectionPorto />
-            <SectionSkills />
-            <SectionTeams />
-            <SectionReview className="mb-10" />
             <SectionServices />
+            <SectionReview className="my-12" />
+            <SectionTeams />
+            <SectionSkills />
         </>
     );
 }
