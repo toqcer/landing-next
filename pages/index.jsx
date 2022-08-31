@@ -1,12 +1,14 @@
 import React from 'react';
 import MainLayout from '../layouts/MainLayout';
-import SectionHomeHero from '../sections/home/SectionHomeHero';
-import SectionAboutUsHome from '../sections/home/SectionAboutUsHome';
-import SectionSkills from '../sections/home/SectionSkills';
-import SectionPorto from '../sections/home/SectionPorto';
-import SectionTeams from '../sections/home/SectionTeams';
-import SectionReview from '../sections/home/SectionReview';
-import SectionService from '../sections/home/SectionServices';
+import {
+    SectionAboutUsHome,
+    SectionHomeHero,
+    SectionPorto,
+    SectionReview,
+    SectionServices,
+    SectionSkills,
+    SectionTeams,
+} from '../sections/home';
 
 export default function Home() {
     return (
@@ -17,7 +19,7 @@ export default function Home() {
             <SectionSkills />
             <SectionTeams />
             <SectionReview className="mb-10" />
-            <SectionService />
+            <SectionServices />
         </>
     );
 }

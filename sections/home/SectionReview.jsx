@@ -12,7 +12,7 @@ import ContainerStyle from '../../styles/Container.module.css';
 import HeadingSection from '../../components/HeadingSection/HeadingSection';
 import { useEffect, useRef, useState } from 'react';
 
-export default function SectionReview({ className }) {
+export default function SectionReview({ className = '' }) {
     const [reviews, setReviews] = useState([]);
 
     async function getReviews() {
@@ -29,7 +29,7 @@ export default function SectionReview({ className }) {
     }, []);
 
     return (
-        <section className={`overflow-hidden ${className && className}`}>
+        <section className={`overflow-hidden ${className}`}>
             <div
                 className={`container pr-0 ml-auto overflow-visible ${ContainerStyle['container-right-0']}`}
             >
