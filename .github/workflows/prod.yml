@@ -28,8 +28,8 @@ jobs:
           cd /home/toqcer/apps/landing-next
           git pull origin main
           git status
-          npm install
-          npm run build
-          pm2 delete landing-next-prod
-          pm2 start "npm run start" --name="landing-next-prod"
-          pm2 status
+          /home/toqcer/.nvm/versions/node/v16.17.0/bin/npm install
+          /home/toqcer/.nvm/versions/node/v16.17.0/bin/npm run build
+          /home/toqcer/.nvm/versions/node/v16.17.0/bin/pm2 delete landing-next-prod
+          /home/toqcer/.nvm/versions/node/v16.17.0/bin/pm2 start "npm run start" --name="landing-next-prod"
+          /home/toqcer/.nvm/versions/node/v16.17.0/bin/pm2 status
