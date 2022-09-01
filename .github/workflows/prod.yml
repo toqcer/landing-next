@@ -26,10 +26,12 @@ jobs:
         port: 22
         script: |
           cd /home/toqcer/apps/landing-next
-          git pull origin main
-          git status
-          npm install --only=prod
-          npm run build
-          pm2 delete landing-next-prod
-          pm2 start "npm run start" --name="landing-next-prod"
-          pm2 status
+          pwd
+          whoami
+          # git pull origin main
+          # git status
+          # npm install --only=prod
+          # npm run build
+          # pm2 delete landing-next-prod
+          # pm2 start "npm run start" --name="landing-next-prod"
+          # pm2 status
