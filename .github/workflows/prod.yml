@@ -22,7 +22,7 @@ jobs:
       with:
         host: ${{ secrets.HOST_PROD }}
         username: ${{ secrets.SSH_USERNAME_PROD }}
-        password: ${{ secrets.SSH_PASSWORD_PROD }}
+        key: ${{ secrets.SSH_KEY_PROD }}
         port: 22
         script: |
           cd ~/home/toqcer/apps/landing-next
