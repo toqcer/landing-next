@@ -4,11 +4,11 @@ import FancyButton from '../../components/Button/FancyButton';
 import Card from '../../components/Card/Card';
 import HeadingSection from '../../components/HeadingSection/HeadingSection';
 
-export default function SectionService() {
+export default function SectionServices() {
     const [services, setServices] = useState([]);
 
     return (
-        <section>
+        <section className="py-10">
             <div className="container mx-auto">
                 <HeadingSection
                     text="Products and Services"
@@ -50,7 +50,7 @@ export default function SectionService() {
                             Services
                         </p>
                         {[...Array(3).fill(3)].map((service, index) => (
-                            <Card className="mb-6">
+                            <Card key={index} className="mb-6">
                                 <figure className="flex gap-9 items-center">
                                     <div className="flex items-center justify-center shadow-md h-20 w-20 bg-linear-blue rounded-3xl">
                                         <Image
