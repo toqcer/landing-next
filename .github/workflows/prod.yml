@@ -11,7 +11,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -26,12 +26,10 @@ jobs:
         port: 22
         script: |
           cd /home/toqcer/apps/landing-next
-          pwd
-          whoami
-          # git pull origin main
-          # git status
-          # npm install --only=prod
-          # npm run build
-          # pm2 delete landing-next-prod
-          # pm2 start "npm run start" --name="landing-next-prod"
-          # pm2 status
+          git pull origin main
+          git status
+          npm install
+          npm run build
+          pm2 delete landing-next-prod
+          pm2 start "npm run start" --name="landing-next-prod"
+          pm2 status
