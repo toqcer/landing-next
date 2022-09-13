@@ -3,37 +3,47 @@ import HeadingSection from '../../components/HeadingSection/HeadingSection';
 import CustomLiWithDot from '../../components/Li/CustomLiWithDot';
 
 import FsLightbox from 'fslightbox-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BiPlay } from 'react-icons/bi';
+
+import CustomLi from '../../styles/CustomLi.module.css';
 
 import AboutCover from '../../public/images/about-cover.png';
 
 export default function SectionAboutUsHome() {
     const [togglerPromo, setTogglerPromo] = useState(false);
+    const [aboutDesc, setAboutDesc] = useState({});
+
+    useEffect(() => {
+        async function getAboutDesc() {
+            const resAboutDesc = await fetch('json/about.json');
+            const jsonAboutDesc = await resAboutDesc.json();
+
+            setAboutDesc(jsonAboutDesc);
+        }
+
+        getAboutDesc();
+    }, []);
 
     return (
         <>
             <section className={`container mx-auto py-20`}>
                 <div className="flex flex-col lg:flex-row lg:items-center lg:h-[576px] ">
                     <div className="lg:flex-1">
-                        <div className="lg:w-96 flex flex-col gap-4">
+                        <div
+                            className={`lg:w-96 flex flex-col gap-4 ${CustomLi['custom-li-dot']}`}
+                        >
                             <HeadingSection
-                                text="Toqcer Is a Digital Agency For You"
+                                text={aboutDesc.heading}
                                 subtext="What is Toqcer?"
                                 isCenter={false}
                             />
-                            <small className="text-solid-brown">
-                                We help grow your business with various of
-                                products and services. We have 3 core services
-                                to help you develop your website and application
-                                such as:
-                            </small>
 
-                            <ul className="space-y-2">
-                                <CustomLiWithDot>Design</CustomLiWithDot>
-                                <CustomLiWithDot>Develop</CustomLiWithDot>
-                                <CustomLiWithDot>Maintenance</CustomLiWithDot>
-                            </ul>
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: aboutDesc.desc,
+                                }}
+                            />
                         </div>
                     </div>
                     <div className="lg:flex-1 flex relative">

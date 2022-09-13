@@ -1,0 +1,27 @@
+[
+    {
+        "bgColor": "bg-linear-blue",
+        "title": "Python",
+        "desc": "Members, Friends Connection ( like followers ), Private Message"
+    },
+    {
+        "bgColor": "bg-linear-red",
+        "title": "NodeJS",
+        "desc": "Members, Friends Connection ( like followers ), Private Message"
+    },
+    {
+        "bgColor": "bg-linear-yellow",
+        "title": "Laravel",
+        "desc": "Your users can create groups to let other users to join and talk"
+    },
+    {
+        "bgColor": "bg-linear-yellow",
+        "title": "Golang",
+        "desc": "8 different scroll effects are ready. You can always change by your tastes."
+    },
+    {
+        "bgColor": "bg-linear-red",
+        "title": "Express",
+        "desc": "8 different scroll effects are ready. You can always change by your tastes."
+    }
+]

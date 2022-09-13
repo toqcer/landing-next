@@ -1,7 +1,6 @@
 import FancyButton from '../../components/Button/FancyButton';
 import Card from '../../components/Card/Card';
 
-import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
 import { BiLoaderAlt } from 'react-icons/bi';
@@ -15,9 +14,7 @@ export default function SectionSkills() {
 
     async function getApiSkill() {
         setIsLoading(true);
-        const response = await fetch(
-            `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=6`,
-        );
+        const response = await fetch('json/skill.json');
         const dummySkill = await response.json();
         setSkills([...skills, ...dummySkill]);
         setIsLoading(false);
@@ -47,17 +44,20 @@ export default function SectionSkills() {
                         <Card key={i} className="col-span-6 bg-white">
                             <figure className="flex items-center gap-4">
                                 <div
-                                    className="flex items-center justify-center shadow-md h-20 w-20 
-                                    bg-linear-blue rounded-3xl"
+                                    className={`flex items-center justify-center shadow-md h-20 w-20 
+                                     rounded-3xl ${skill.bgColor}`}
                                 >
                                     <UsersIcon />
                                 </div>
                                 <figcaption className="flex-1">
-                                    <span className="block text-purple-bold font-bold">
-                                        {skill.title}
+                                    <span className="block text-purple-bold font-bold text-2xl mb-1">
+                                        {`${String(skill.title).substring(
+                                            0,
+                                            20,
+                                        )}...`}
                                     </span>
                                     <small className="text-gray-helper">
-                                        {skill.body}
+                                        {skill.desc}
                                     </small>
                                 </figcaption>
                             </figure>
