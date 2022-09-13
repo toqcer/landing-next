@@ -8,14 +8,18 @@ export default function HeadingSection({
         <>
             {subtext && (
                 <span
-                    className={`capitalize text-fancy-purple-light block font-semibold ${
+                    className={`capitalize text-fancy-purple block font-semibold ${
                         isCenter && 'text-center'
                     }`}
                 >
                     {subtext}
                 </span>
             )}
-            <h2 className={`text-4xl font-bold text-fancy-purple ${className}`}>
+            <h2
+                className={`text-4xl font-bold text-midnight-blue ${className} ${
+                    isCenter && 'text-center'
+                }`}
+            >
                 {text}
             </h2>
         </>

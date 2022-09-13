@@ -38,6 +38,7 @@ module.exports = {
                 'my-blue-light': 'hsla(203,64%,29%,.6)',
                 'my-purple': 'hsla(241,44%,26%,1)',
                 'my-purple-light': 'hsla(241,44%,26%,.6)',
+                'midnight-blue': '#0A093D',
                 'fancy-purple': '#571C56',
                 'fancy-purple-light': 'hsla(298,50%,23%,.6)',
                 'solid-brown': 'rgba(101, 100, 100, 1)',
@@ -50,6 +51,8 @@ module.exports = {
                 'blue-50': '#E2EEFF',
             },
             backgroundImage: {
+                'linear-full-green':
+                    'linear-gradient(0deg, rgba(126, 192, 177, 0) 1.63%, rgba(126, 192, 177, 0.2) 20.5%, rgba(126, 192, 177, 0.2) 58.57%, rgba(126, 192, 177, 0.0154456) 96.8%, rgba(126, 192, 177, 0) 100%)',
                 'linear-red':
                     'linear-gradient(154.49deg, #FF858A 6.61%, #F04148 89.72%)',
                 'linear-yellow':
