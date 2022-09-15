@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-import { FIX_HEIGHT_NAVBAR, routes } from '../config.ts';
+import { FIX_HEIGHT_NAVBAR, routes } from '../config';
 import NavLink from './NavLink';
 import { useRouter } from 'next/router';
 

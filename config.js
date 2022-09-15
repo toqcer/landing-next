@@ -1,6 +1,6 @@
-export const FIX_HEIGHT_NAVBAR: number = 85;
+export const FIX_HEIGHT_NAVBAR = 85;
 
-export const routes: Array<{ title: string; route: string }> = [
+export const routes = [
     {
         title: 'home',
         route: '/',
