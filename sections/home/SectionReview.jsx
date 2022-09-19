@@ -10,26 +10,10 @@ import Card from '../../components/Card/Card';
 import ContainerStyle from '../../styles/Container.module.css';
 
 import HeadingSection from '../../components/HeadingSection/HeadingSection';
-import { useEffect, useRef, useState } from 'react';
 
-export default function SectionReview({ className = '' }) {
-    const [reviews, setReviews] = useState([]);
-
-    async function getReviews() {
-        const dummyReviewsRes = await fetch(
-            `https://jsonplaceholder.typicode.com/posts?_limit=6`,
-        );
-        setReviews([...reviews, ...(await dummyReviewsRes.json())]);
-    }
-
-    const apiRef = useRef(getReviews);
-
-    useEffect(() => {
-        apiRef.current();
-    }, []);
-
+export default function SectionReview({ reviews }) {
     return (
-        <section className={`overflow-hidden ${className}`}>
+        <section className={`overflow-hidden`}>
             <div
                 className={`container pr-0 ml-auto overflow-visible ${ContainerStyle['container-right-0']}`}
             >
@@ -63,31 +47,32 @@ export default function SectionReview({ className = '' }) {
                                 }}
                                 mousewheel={true}
                             >
-                                {reviews.map((review, index) => (
-                                    <SwiperSlide
-                                        className="overflow-visible py-10 bg-white !h-auto"
-                                        key={index}
-                                    >
-                                        <Card className="!shadow-lg h-full flex flex-col">
-                                            <div className="flex items-center gap-3 mb-10">
-                                                <BiStar color="#571C56" />
-                                                <p className="text-xl">
-                                                    {review.title}
+                                {reviews &&
+                                    reviews.map((review, index) => (
+                                        <SwiperSlide
+                                            className="overflow-visible py-10 bg-white !h-auto"
+                                            key={index}
+                                        >
+                                            <Card className="!shadow-lg h-full flex flex-col">
+                                                <div className="flex items-center gap-3 mb-10">
+                                                    <BiStar color="#571C56" />
+                                                    <p className="text-xl">
+                                                        {review.title}
+                                                    </p>
+                                                </div>
+                                                <p className="text-gray-600 mb-3">
+                                                    {review.body}
                                                 </p>
-                                            </div>
-                                            <p className="text-gray-600 mb-3">
-                                                {review.body}
-                                            </p>
 
-                                            <Link href="/details" passHref>
-                                                <a className="text-fancy-purple inline-flex items-center mt-auto">
-                                                    See details
-                                                    <BiRightArrowAlt />
-                                                </a>
-                                            </Link>
-                                        </Card>
-                                    </SwiperSlide>
-                                ))}
+                                                <Link href="/details" passHref>
+                                                    <a className="text-fancy-purple inline-flex items-center mt-auto">
+                                                        See details
+                                                        <BiRightArrowAlt />
+                                                    </a>
+                                                </Link>
+                                            </Card>
+                                        </SwiperSlide>
+                                    ))}
                             </Swiper>
                         </div>
                     </div>
