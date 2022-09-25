@@ -6,6 +6,7 @@ module.exports = {
         './sections/**/*.{js,ts,jsx,tsx}',
         './layouts/**/*.{js,ts,jsx,tsx}',
     ],
+    safelist: ['bg-linear-yellow', 'bg-linear-red'],
     theme: {
         container: {
             // you can configure the container to be centered
@@ -61,6 +62,11 @@ module.exports = {
                     'linear-gradient(154.49deg, #5CA1FE 6.61%, #217BF4 89.72%)',
                 'linear-green-center':
                     'linear-gradient(0deg, rgba(126, 192, 177, 0) 1.63%, rgba(126, 192, 177, 0.2) 20.5%, rgba(126, 192, 177, 0.2) 58.57%, rgba(126, 192, 177, 0) 100%)',
+                'linear-green-bottom-right':
+                    'linear-gradient(335.76deg, rgba(56, 166, 141, 0.5) 15.24%, #ffffff 84.85%)',
+            },
+            height: {
+                'screen-with-nav': 'calc(100vh - 80px)',
             },
         },
     },

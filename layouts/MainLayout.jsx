@@ -9,7 +9,7 @@ export default function MainLayout({ children }) {
                 <Navbar />
                 <main className={styles.layout_main}>{children}</main>
             </div>
-            <Footer className="mt-10" />
+            <Footer />
         </div>
     );
 }

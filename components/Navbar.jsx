@@ -23,6 +23,8 @@ export default function Navbar() {
         };
     }, [windowYPos]);
 
+    console.log(windowYPos, 'windowYPos');
+
     return (
         <nav
             style={{

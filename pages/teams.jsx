@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Scrollbar, Pagination, Autoplay, SwiperOptions } from 'swiper';
+import { Pagination, Grid, FreeMode } from 'swiper';
 import 'swiper/css';
-import 'swiper/css/scrollbar';
 import 'swiper/css/pagination';
 import 'swiper/css/grid';
 
@@ -19,9 +18,25 @@ import SliderCustom from '../styles/Slider.module.css';
 import UsersIcon from '../public/images/UsersIcon';
 
 export default function Teams() {
+    const [skills, setSkills] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    async function getApiSkill() {
+        setIsLoading(true);
+        const response = await fetch('json/skill.json');
+        const dummySkill = await response.json();
+        setSkills([...skills, ...dummySkill]);
+        setIsLoading(false);
+    }
+
+    const apiRef = useRef(getApiSkill);
+    useEffect(() => {
+        apiRef.current();
+    }, []);
+
     return (
         <>
-            <div className="bg-linear-full-green">
+            <div className="bg-linear-full-green mb-10">
                 <header className="h-screen flex flex-col justify-center">
                     <HeadingSection
                         text="Our Team Members"
@@ -38,14 +53,12 @@ export default function Teams() {
 
                     <article className="mt-10">
                         <Swiper
-                            modules={[Pagination, Autoplay]}
+                            modules={[Pagination]}
                             slidesPerView={4.5}
-                            spaceBetween={60}
-                            autoplay={{ delay: 9000 }}
-                            watchOverflow={true}
-                            pagination={{ clickable: true }}
-                            centeredSlides={true}
-                            mousewheel={true}
+                            spaceBetween={20}
+                            grabCursor={true}
+                            initialSlide={0}
+                            slidesOffsetBefore={100}
                         >
                             {Array(5)
                                 .fill(5)
@@ -94,7 +107,7 @@ export default function Teams() {
                     </article>
                 </header>
 
-                <section className="pb-4">
+                <section>
                     <HeadingSection
                         text="Tools and Skills"
                         subtext="What We Capable of"
@@ -109,241 +122,36 @@ export default function Teams() {
 
                     <article className="mt-10">
                         <Swiper
-                            slidesPerView={6}
-                            spaceBetween={44}
-                            grid={{ rows: 2, fill: 'rows' }}
-                            centeredSlides={true}
-                            className="pb-4"
+                            modules={[Grid]}
+                            slidesPerView={3}
+                            spaceBetween={14}
+                            grid={{ rows: 2, fill: 'row' }}
+                            slidesOffsetBefore={100}
                         >
-                            <SwiperSlide className="pb-10">
-                                <Card className="bg-white !p-3">
-                                    <figure className="flex items-center gap-4">
-                                        <div
-                                            className={`flex items-center justify-center shadow-md h-20 w-20 
-                                            rounded-3xl bg-linear-red`}
-                                        >
-                                            <UsersIcon />
-                                        </div>
-                                        <figcaption className="flex-1">
-                                            <span className="block text-purple-bold font-bold text-2xl mb-1">
-                                                Website Basic Package
-                                            </span>
-                                            <small className="text-gray-helper">
-                                                8 different scroll effects are
-                                                ready. You can always change by
-                                                your tastes.
-                                            </small>
-                                        </figcaption>
-                                    </figure>
-                                </Card>
-                            </SwiperSlide>
-
-                            <SwiperSlide className="pb-10">
-                                <Card className="bg-white !p-3">
-                                    <figure className="flex items-center gap-4">
-                                        <div
-                                            className={`flex items-center justify-center shadow-md h-20 w-20 
-                                            rounded-3xl bg-linear-red`}
-                                        >
-                                            <UsersIcon />
-                                        </div>
-                                        <figcaption className="flex-1">
-                                            <span className="block text-purple-bold font-bold text-2xl mb-1">
-                                                Website Basic Package
-                                            </span>
-                                            <small className="text-gray-helper">
-                                                8 different scroll effects are
-                                                ready. You can always change by
-                                                your tastes.
-                                            </small>
-                                        </figcaption>
-                                    </figure>
-                                </Card>
-                            </SwiperSlide>
-
-                            <SwiperSlide className="pb-10">
-                                <Card className="bg-white !p-3">
-                                    <figure className="flex items-center gap-4">
-                                        <div
-                                            className={`flex items-center justify-center shadow-md h-20 w-20 
-                                            rounded-3xl bg-linear-red`}
-                                        >
-                                            <UsersIcon />
-                                        </div>
-                                        <figcaption className="flex-1">
-                                            <span className="block text-purple-bold font-bold text-2xl mb-1">
-                                                Website Basic Package
-                                            </span>
-                                            <small className="text-gray-helper">
-                                                8 different scroll effects are
-                                                ready. You can always change by
-                                                your tastes.
-                                            </small>
-                                        </figcaption>
-                                    </figure>
-                                </Card>
-                            </SwiperSlide>
-
-                            <SwiperSlide className="pb-10">
-                                <Card className="bg-white !p-3">
-                                    <figure className="flex items-center gap-4">
-                                        <div
-                                            className={`flex items-center justify-center shadow-md h-20 w-20 
-                                            rounded-3xl bg-linear-red`}
-                                        >
-                                            <UsersIcon />
-                                        </div>
-                                        <figcaption className="flex-1">
-                                            <span className="block text-purple-bold font-bold text-2xl mb-1">
-                                                Website Basic Package
-                                            </span>
-                                            <small className="text-gray-helper">
-                                                8 different scroll effects are
-                                                ready. You can always change by
-                                                your tastes.
-                                            </small>
-                                        </figcaption>
-                                    </figure>
-                                </Card>
-                            </SwiperSlide>
-
-                            <SwiperSlide className="pb-10">
-                                <Card className="bg-white !p-3">
-                                    <figure className="flex items-center gap-4">
-                                        <div
-                                            className={`flex items-center justify-center shadow-md h-20 w-20 
-                                            rounded-3xl bg-linear-red`}
-                                        >
-                                            <UsersIcon />
-                                        </div>
-                                        <figcaption className="flex-1">
-                                            <span className="block text-purple-bold font-bold text-2xl mb-1">
-                                                Website Basic Package
-                                            </span>
-                                            <small className="text-gray-helper">
-                                                8 different scroll effects are
-                                                ready. You can always change by
-                                                your tastes.
-                                            </small>
-                                        </figcaption>
-                                    </figure>
-                                </Card>
-                            </SwiperSlide>
-
-                            <SwiperSlide className="pb-10">
-                                <Card className="bg-white !p-3">
-                                    <figure className="flex items-center gap-4">
-                                        <div
-                                            className={`flex items-center justify-center shadow-md h-20 w-20 
-                                            rounded-3xl bg-linear-red`}
-                                        >
-                                            <UsersIcon />
-                                        </div>
-                                        <figcaption className="flex-1">
-                                            <span className="block text-purple-bold font-bold text-2xl mb-1">
-                                                Website Basic Package
-                                            </span>
-                                            <small className="text-gray-helper">
-                                                8 different scroll effects are
-                                                ready. You can always change by
-                                                your tastes.
-                                            </small>
-                                        </figcaption>
-                                    </figure>
-                                </Card>
-                            </SwiperSlide>
-
-                            <SwiperSlide className="pb-10">
-                                <Card className="bg-white !p-3">
-                                    <figure className="flex items-center gap-4">
-                                        <div
-                                            className={`flex items-center justify-center shadow-md h-20 w-20 
-                                            rounded-3xl bg-linear-red`}
-                                        >
-                                            <UsersIcon />
-                                        </div>
-                                        <figcaption className="flex-1">
-                                            <span className="block text-purple-bold font-bold text-2xl mb-1">
-                                                Website Basic Package
-                                            </span>
-                                            <small className="text-gray-helper">
-                                                8 different scroll effects are
-                                                ready. You can always change by
-                                                your tastes.
-                                            </small>
-                                        </figcaption>
-                                    </figure>
-                                </Card>
-                            </SwiperSlide>
-
-                            <SwiperSlide className="pb-10">
-                                <Card className="bg-white !p-3">
-                                    <figure className="flex items-center gap-4">
-                                        <div
-                                            className={`flex items-center justify-center shadow-md h-20 w-20 
-                                            rounded-3xl bg-linear-red`}
-                                        >
-                                            <UsersIcon />
-                                        </div>
-                                        <figcaption className="flex-1">
-                                            <span className="block text-purple-bold font-bold text-2xl mb-1">
-                                                Website Basic Package
-                                            </span>
-                                            <small className="text-gray-helper">
-                                                8 different scroll effects are
-                                                ready. You can always change by
-                                                your tastes.
-                                            </small>
-                                        </figcaption>
-                                    </figure>
-                                </Card>
-                            </SwiperSlide>
-
-                            <SwiperSlide className="pb-10">
-                                <Card className="bg-white !p-3">
-                                    <figure className="flex items-center gap-4">
-                                        <div
-                                            className={`flex items-center justify-center shadow-md h-20 w-20 
-                                            rounded-3xl bg-linear-red`}
-                                        >
-                                            <UsersIcon />
-                                        </div>
-                                        <figcaption className="flex-1">
-                                            <span className="block text-purple-bold font-bold text-2xl mb-1">
-                                                Website Basic Package
-                                            </span>
-                                            <small className="text-gray-helper">
-                                                8 different scroll effects are
-                                                ready. You can always change by
-                                                your tastes.
-                                            </small>
-                                        </figcaption>
-                                    </figure>
-                                </Card>
-                            </SwiperSlide>
-
-                            <SwiperSlide className="pb-10">
-                                <Card className="bg-white !p-3">
-                                    <figure className="flex items-center gap-4">
-                                        <div
-                                            className={`flex items-center justify-center shadow-md h-20 w-20 
-                                            rounded-3xl bg-linear-red`}
-                                        >
-                                            <UsersIcon />
-                                        </div>
-                                        <figcaption className="flex-1">
-                                            <span className="block text-purple-bold font-bold text-2xl mb-1">
-                                                Website Basic Package
-                                            </span>
-                                            <small className="text-gray-helper">
-                                                8 different scroll effects are
-                                                ready. You can always change by
-                                                your tastes.
-                                            </small>
-                                        </figcaption>
-                                    </figure>
-                                </Card>
-                            </SwiperSlide>
+                            {skills.map((skill, i) => (
+                                <SwiperSlide className="pb-10" key={i}>
+                                    <Card className="bg-white">
+                                        <figure className="flex items-center gap-4">
+                                            <div
+                                                className={`flex items-center justify-center shadow-md 
+                                                h-20 w-20 rounded-3xl ${skill.bgColor}`}
+                                            >
+                                                <UsersIcon />
+                                            </div>
+                                            <figcaption className="flex-1">
+                                                <span className="block text-purple-bold font-bold text-2xl mb-1">
+                                                    {`${String(
+                                                        skill.title,
+                                                    ).substring(0, 20)}...`}
+                                                </span>
+                                                <small className="text-gray-helper">
+                                                    {skill.desc}
+                                                </small>
+                                            </figcaption>
+                                        </figure>
+                                    </Card>
+                                </SwiperSlide>
+                            ))}
                         </Swiper>
                     </article>
                 </section>

@@ -23,5 +23,25 @@
         "bgColor": "bg-linear-red",
         "title": "Express",
         "desc": "8 different scroll effects are ready. You can always change by your tastes."
+    },
+    {
+        "bgColor": "bg-linear-yellow",
+        "title": "Golang",
+        "desc": "8 different scroll effects are ready. You can always change by your tastes."
+    },
+    {
+        "bgColor": "bg-linear-yellow",
+        "title": "Golang",
+        "desc": "8 different scroll effects are ready. You can always change by your tastes."
+    },
+    {
+        "bgColor": "bg-linear-yellow",
+        "title": "Golang",
+        "desc": "8 different scroll effects are ready. You can always change by your tastes."
+    },
+    {
+        "bgColor": "bg-linear-yellow",
+        "title": "Golang",
+        "desc": "8 different scroll effects are ready. You can always change by your tastes."
     }
 ]
