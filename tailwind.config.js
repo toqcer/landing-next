@@ -50,6 +50,7 @@ module.exports = {
                 'gray-blue-200': '#E2EEFF',
                 'white-50': '#F3F3F3',
                 'blue-50': '#E2EEFF',
+                'teal-primary': '#37A48D',
             },
             backgroundImage: {
                 'linear-full-green':

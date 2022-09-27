@@ -14,8 +14,8 @@ export const routes = [
         route: '/product',
     },
     {
-        title: 'portofolio',
-        route: '/portofolio',
+        title: 'portfolio',
+        route: '/portfolio',
     },
     {
         title: 'client',
