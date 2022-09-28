@@ -1,22 +1,26 @@
 import { useEffect, useRef, useState } from 'react';
 import { BiLoaderAlt } from 'react-icons/bi';
-import Card from '../components/Card/Card';
+
 import HeadingSection from '../components/HeadingSection/HeadingSection';
 import InputHorizontal from '../components/InputHorizontal/InputHorizontal';
+import PaginatePortfolio from '../components/Paginate/PaginatePortfolio';
 import MainLayout from '../layouts/MainLayout';
-import UsersIcon from '../public/images/UsersIcon';
 
 const portfolio = () => {
     const [portfolio, setPortfolio] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    async function getApiSkill() {
+    const getApiSkill = async () => {
         setIsLoading(true);
-        const response = await fetch('json/porto.json');
+
+        const response = await fetch(
+            'https://jsonplaceholder.typicode.com/posts',
+        );
         const dummyPortfolio = await response.json();
+
         setPortfolio([...portfolio, ...dummyPortfolio]);
         setIsLoading(false);
-    }
+    };
 
     const apiRef = useRef(getApiSkill);
 
@@ -42,33 +46,14 @@ const portfolio = () => {
 
             <section className="pb-20">
                 <div className="container">
-                    {isLoading && <BiLoaderAlt className="animate-spin" />}
-                    {!isLoading && (
-                        <div className="grid grid-cols-12 gap-8 lg:mt-16">
-                            {portfolio.map((skill, i) => (
-                                <Card key={i} className="col-span-6 bg-white">
-                                    <figure className="flex items-center gap-4">
-                                        <div
-                                            className={`flex items-center justify-center shadow-md h-20 w-20 
-                                     rounded-3xl ${skill.bgColor}`}
-                                        >
-                                            <UsersIcon />
-                                        </div>
-                                        <figcaption className="flex-1">
-                                            <span className="block text-purple-bold font-bold text-2xl mb-1">
-                                                {`${String(
-                                                    skill.title,
-                                                ).substring(0, 20)}...`}
-                                            </span>
-                                            <small className="text-gray-helper">
-                                                {skill.desc}
-                                            </small>
-                                        </figcaption>
-                                    </figure>
-                                </Card>
-                            ))}
-                        </div>
+                    {isLoading && (
+                        <BiLoaderAlt
+                            className="animate-spin mx-auto mt-4 text-teal-700"
+                            size={50}
+                        />
                     )}
+
+                    {!isLoading && <PaginatePortfolio data={portfolio} />}
                 </div>
             </section>
         </>

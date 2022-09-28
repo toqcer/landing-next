@@ -1,0 +1,15 @@
+.pagination {
+    @apply flex gap-3;
+
+    &__item {
+        @apply w-8 h-8 border flex border-teal-primary text-teal-primary rounded-full overflow-hidden;
+
+        &--active {
+            @apply text-white bg-teal-500;
+        }
+    }
+
+    &__link {
+        @apply flex justify-center items-center w-full h-full;
+    }
+}
