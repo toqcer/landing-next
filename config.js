@@ -10,8 +10,8 @@ export const routes = [
         route: '/services',
     },
     {
-        title: 'product',
-        route: '/product',
+        title: 'products',
+        route: '/products',
     },
     {
         title: 'portfolio',

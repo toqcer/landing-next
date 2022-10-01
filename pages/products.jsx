@@ -1,17 +1,17 @@
 import PortoProduct from '../components/Section/portoProduct';
 import MainLayout from '../layouts/MainLayout';
 
-const Portfolio = () => {
+const Products = () => {
     return (
         <PortoProduct
-            headingText="Portfolio"
+            headingText="Products"
             urlApi="https://jsonplaceholder.typicode.com/posts"
         />
     );
 };
 
-export default Portfolio;
+export default Products;
 
-Portfolio.getLayout = function getLayout(page) {
+Products.getLayout = function getLayout(page) {
     return <MainLayout>{page}</MainLayout>;
 };

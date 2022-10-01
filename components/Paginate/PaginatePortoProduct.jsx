@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 import UsersIcon from '../../public/images/UsersIcon';
 import PaginationStyle from '../../styles/Pagination.module.scss';
 
-const PaginatePortfolio = ({ data }) => {
+const PaginatePortoProduct = ({ data }) => {
     const [currentItems, setCurrentItems] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
@@ -68,4 +68,4 @@ const PaginatePortfolio = ({ data }) => {
     );
 };
 
-export default PaginatePortfolio;
+export default PaginatePortoProduct;
