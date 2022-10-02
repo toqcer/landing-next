@@ -1,0 +1,17 @@
+[
+    {
+        "icon": "/images/icon/tools/1.svg",
+        "label": "Total Clients",
+        "val": 30000
+    },
+    {
+        "icon": "/images/icon/tools/1.svg",
+        "label": "Total Revenue",
+        "val": 30000
+    },
+    {
+        "icon": "/images/icon/tools/1.svg",
+        "label": "Total",
+        "val": 30000
+    }
+]

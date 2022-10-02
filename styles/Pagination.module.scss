@@ -1,5 +1,5 @@
 .pagination {
-    @apply flex gap-3;
+    @apply flex gap-3 justify-center;
 
     &__item {
         @apply w-8 h-8 border flex border-teal-primary text-teal-primary rounded-full overflow-hidden;

@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 import UsersIcon from '../../public/images/UsersIcon';
 import PaginationStyle from '../../styles/Pagination.module.scss';
 
-const PaginatePortoProduct = ({ data }) => {
+const PaginatePortoProduct = ({ data, ...rest }) => {
     const [currentItems, setCurrentItems] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
@@ -23,7 +23,7 @@ const PaginatePortoProduct = ({ data }) => {
 
     return (
         <>
-            <div className="grid grid-cols-12 gap-8 lg:mt-16 mb-4">
+            <div className="grid grid-cols-12 gap-8 lg:mt-16 mb-4" {...rest}>
                 {currentItems.map((skill, i) => (
                     <Card key={i} className="col-span-6 bg-white">
                         <figure className="flex items-center gap-4">

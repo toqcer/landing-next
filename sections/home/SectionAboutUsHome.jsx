@@ -6,7 +6,7 @@ import FsLightbox from 'fslightbox-react';
 import { useEffect, useState } from 'react';
 import { BiPlay } from 'react-icons/bi';
 
-import CustomLi from '../../styles/CustomLi.module.css';
+import CustomLi from '../../styles/CustomLi.module.scss';
 
 import AboutCover from '../../public/images/about-cover.png';
 
