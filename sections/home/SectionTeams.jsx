@@ -71,10 +71,10 @@ export default function SectionTeams() {
                                 </div>
                                 <div className="flex flex-col text-center mt-4 ">
                                     <span className="font-semibold">
-                                        Bariq Dharmawan
+                                        {member.name}
                                     </span>
                                     <span className="-mt-1 text-solid-brown font-medium text-sm">
-                                        @briqdharmawan
+                                        {member.instagram}
                                     </span>
                                 </div>
                             </div>

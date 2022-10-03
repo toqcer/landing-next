@@ -84,7 +84,7 @@ export default function Teams() {
                             slidesOffsetBefore={100}
                         >
                             {members.data &&
-                                members.data.map((item, index) => {
+                                members.data.map((member, index) => {
                                     return (
                                         <SwiperSlide
                                             className={`overflow-visible !h-auto pb-14 ${SliderCustom['swiper-slide-active']}`}
@@ -114,10 +114,10 @@ export default function Teams() {
                                                     </div>
                                                     <div className="flex flex-col text-center mt-4 ">
                                                         <span className="font-semibold">
-                                                            Bariq Dharmawan
+                                                            {member.name}
                                                         </span>
                                                         <span className="-mt-1 text-solid-brown font-medium text-sm">
-                                                            @briqdharmawan
+                                                            {member.instagram}
                                                         </span>
                                                     </div>
                                                 </div>

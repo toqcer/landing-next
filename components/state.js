@@ -7,9 +7,7 @@ const ourTeam = selector({
             status = 200;
 
         try {
-            const resMembers = await fetch(
-                'https://jsonplaceholder.typicode.com/posts?_limit=5',
-            );
+            const resMembers = await fetch('json/members.json');
 
             const jsonMembers = await resMembers.json();
             resMembers.status !== 200
