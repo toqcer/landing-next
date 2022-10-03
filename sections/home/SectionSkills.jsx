@@ -1,31 +1,11 @@
 import FancyButton from '../../components/Button/FancyButton';
 import Card from '../../components/Card/Card';
 
-import { useEffect, useRef, useState } from 'react';
-
-import { BiLoaderAlt } from 'react-icons/bi';
 import HeadingSection from '../../components/HeadingSection/HeadingSection';
 import UsersIcon from '../../public/images/UsersIcon';
+import Link from 'next/link';
 
-export default function SectionSkills() {
-    const [skills, setSkills] = useState([]);
-    const [page, setPage] = useState(1);
-    const [isLoading, setIsLoading] = useState(false);
-
-    async function getApiSkill() {
-        setIsLoading(true);
-        const response = await fetch('json/skill.json');
-        const dummySkill = await response.json();
-        setSkills([...skills, ...dummySkill]);
-        setIsLoading(false);
-    }
-
-    const apiRef = useRef(getApiSkill);
-
-    useEffect(() => {
-        apiRef.current();
-    }, [page]);
-
+export default function SectionSkills({ skills }) {
     return (
         <section className="py-20 bg-linear-green-center">
             <div className="container mx-auto">
@@ -65,12 +45,10 @@ export default function SectionSkills() {
                     ))}
                 </div>
 
-                <FancyButton
-                    className="mt-10 mx-auto gap-2 flex"
-                    onClick={() => setPage(page + 1)}
-                >
-                    <span>Discover More</span>
-                    {isLoading && <BiLoaderAlt className="animate-spin" />}
+                <FancyButton className="mt-10 mx-auto gap-2 flex">
+                    <Link href="/teams#tools-and-skills">
+                        <span>Discover More</span>
+                    </Link>
                 </FancyButton>
             </div>
         </section>

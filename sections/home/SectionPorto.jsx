@@ -25,6 +25,8 @@ export default function SectionPorto() {
         apiRef.current();
     }, []);
 
+    console.log(portos, 'portos');
+
     return (
         <section className="container mx-auto py-20">
             <div className="flex lg:flex-row flex-col gap-6">

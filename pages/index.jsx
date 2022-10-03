@@ -10,7 +10,7 @@ import {
     SectionTeams,
 } from '../sections/home';
 
-export default function Home({ reviewData }) {
+export default function Home({ reviewData, skills }) {
     return (
         <>
             <SectionHomeHero />
@@ -19,7 +19,7 @@ export default function Home({ reviewData }) {
             <SectionServices />
             <SectionReview reviews={reviewData} />
             <SectionTeams />
-            <SectionSkills />
+            <SectionSkills skills={skills} />
         </>
     );
 }
@@ -34,9 +34,13 @@ export async function getServerSideProps() {
     );
     const reviewData = await reviewRes.json();
 
+    const resSkill = await fetch(`${process.env.URL}/json/skill.json`);
+    const skills = await resSkill.json();
+
     return {
         props: {
             reviewData,
+            skills,
         },
     };
 }

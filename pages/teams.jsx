@@ -129,7 +129,7 @@ export default function Teams() {
                     </article>
                 </header>
 
-                <section>
+                <section id="tools-and-skills">
                     <HeadingSection
                         text="Tools and Skills"
                         subtext="What We Capable of"
