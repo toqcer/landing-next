@@ -16,22 +16,36 @@ import { BsCheck } from 'react-icons/bs';
 
 import SliderCustom from '../styles/Slider.module.css';
 import UsersIcon from '../public/images/UsersIcon';
+import { useRecoilValueLoadable } from 'recoil';
+import { ourTeam } from '../components/state';
+import { BiLoaderAlt } from 'react-icons/bi';
 
 export default function Teams() {
     const [skills, setSkills] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoadingSkill, setIsLoadingSkill] = useState(false);
+
+    const [members, setMembers] = useState([]);
+
+    const teamsRecoil = useRecoilValueLoadable(ourTeam);
+    const { contents: contentTeams } = teamsRecoil;
 
     async function getApiSkill() {
-        setIsLoading(true);
+        setIsLoadingSkill(true);
         const response = await fetch('json/skill.json');
         const dummySkill = await response.json();
         setSkills([...skills, ...dummySkill]);
-        setIsLoading(false);
+
+        setIsLoadingSkill(false);
     }
 
     const apiRef = useRef(getApiSkill);
+    const memberRef = useRef(async () => {
+        setMembers(await contentTeams);
+    });
+
     useEffect(() => {
         apiRef.current();
+        memberRef.current();
     }, []);
 
     return (
@@ -52,6 +66,15 @@ export default function Teams() {
                     </p>
 
                     <article className="mt-10">
+                        {members.data === undefined && (
+                            <div className="flex justify-center">
+                                <BiLoaderAlt
+                                    className="animate-spin"
+                                    size={70}
+                                />
+                            </div>
+                        )}
+
                         <Swiper
                             modules={[Pagination]}
                             slidesPerView={4.5}
@@ -60,9 +83,8 @@ export default function Teams() {
                             initialSlide={0}
                             slidesOffsetBefore={100}
                         >
-                            {Array(5)
-                                .fill(5)
-                                .map((item, index) => {
+                            {members.data &&
+                                members.data.map((item, index) => {
                                     return (
                                         <SwiperSlide
                                             className={`overflow-visible !h-auto pb-14 ${SliderCustom['swiper-slide-active']}`}
@@ -121,6 +143,12 @@ export default function Teams() {
                     </p>
 
                     <article className="mt-10">
+                        {isLoadingSkill && (
+                            <BiLoaderAlt
+                                className="animate-spin mx-auto"
+                                size={70}
+                            />
+                        )}
                         <Swiper
                             modules={[Grid]}
                             slidesPerView={3}
@@ -128,30 +156,31 @@ export default function Teams() {
                             grid={{ rows: 2, fill: 'row' }}
                             slidesOffsetBefore={100}
                         >
-                            {skills.map((skill, i) => (
-                                <SwiperSlide className="pb-10" key={i}>
-                                    <Card className="bg-white">
-                                        <figure className="flex items-center gap-4">
-                                            <div
-                                                className={`flex items-center justify-center shadow-md 
+                            {!isLoadingSkill &&
+                                skills.map((skill, i) => (
+                                    <SwiperSlide className="pb-10" key={i}>
+                                        <Card className="bg-white">
+                                            <figure className="flex items-center gap-4">
+                                                <div
+                                                    className={`flex items-center justify-center shadow-md 
                                                 h-20 w-20 rounded-3xl ${skill.bgColor}`}
-                                            >
-                                                <UsersIcon />
-                                            </div>
-                                            <figcaption className="flex-1">
-                                                <span className="block text-purple-bold font-bold text-2xl mb-1">
-                                                    {`${String(
-                                                        skill.title,
-                                                    ).substring(0, 20)}...`}
-                                                </span>
-                                                <small className="text-gray-helper">
-                                                    {skill.desc}
-                                                </small>
-                                            </figcaption>
-                                        </figure>
-                                    </Card>
-                                </SwiperSlide>
-                            ))}
+                                                >
+                                                    <UsersIcon />
+                                                </div>
+                                                <figcaption className="flex-1">
+                                                    <span className="block text-purple-bold font-bold text-2xl mb-1">
+                                                        {`${String(
+                                                            skill.title,
+                                                        ).substring(0, 20)}...`}
+                                                    </span>
+                                                    <small className="text-gray-helper">
+                                                        {skill.desc}
+                                                    </small>
+                                                </figcaption>
+                                            </figure>
+                                        </Card>
+                                    </SwiperSlide>
+                                ))}
                         </Swiper>
                     </article>
                 </section>
